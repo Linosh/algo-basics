@@ -7,7 +7,7 @@ import java.util.List;
 public class ContiguousSubarray {
     public static void main(String[] args) {
         List<Integer> arr = Arrays.asList(-2, 1, -3, 4, -1, 2, 1, -5, 4);
-        System.out.println(new ContiguousSubarray().maxSubArray2(arr, arr.size()));
+        System.out.println(new ContiguousSubarray().maxSubArray3(arr, arr.size()));
     }
 
     public int maxSubArray(final List<Integer> arr, int n) {
@@ -52,5 +52,34 @@ public class ContiguousSubarray {
 
         int ans = Math.max(rightMss, leftMss);
         return Math.max(ans, leftSum + righSum);
+    }
+
+    public int maxSubArray3(final List<Integer> arr, int n) {
+
+        // if all are negative
+        int sum = Integer.MIN_VALUE;
+        boolean isNeg = true;
+        for (Integer anArr1 : arr) {
+            int val = anArr1;
+            if (val > 0) isNeg = false;
+            sum = Math.max(sum, val);
+        }
+
+        if (isNeg) return sum;
+
+        // if at least one is positive
+        sum = 0;
+        int ans = 0;
+        for (Integer e : arr) {
+
+            if (sum + e > 0)
+                sum += e;
+            else
+                sum = 0;
+            ans = Math.max(ans, sum);
+        }
+
+        return ans;
+
     }
 }
