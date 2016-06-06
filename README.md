@@ -1,0 +1,15 @@
+# algo-basics
+- Add Binary
+- Add One To Number
+- Contiguous Subarray
+- Decode Ways
+- Fibonacci
+- First Bad Version
+- Merge Sort
+- Move Zeros
+- Prime Sum
+- QuickSort
+- Regular Expression Matching
+- Simple Sorting
+- Sum 3
+- Two Sum
